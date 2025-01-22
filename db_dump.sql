@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS "group"
     description TEXT
 );
 INSERT INTO "group" VALUES(0,1,'Default',1736960356,1736960356,'The default group');
+INSERT INTO "group" VALUES(1,1,'Adblock',1737494093,1737494093,NULL);
+INSERT INTO "group" VALUES(2,1,'No-block',1737494098,1737494098,NULL);
 CREATE TABLE domainlist
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,7 +40,7 @@ CREATE TABLE adlist
     invalid_domains INTEGER NOT NULL DEFAULT 0,
     status INTEGER NOT NULL DEFAULT 0
 );
-INSERT INTO adlist VALUES(1,'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',1,1736960356,1736960356,'Migrated from /etc/pihole/adlists.list',1736960356,116155,1,1);
+INSERT INTO adlist VALUES(1,'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',0,1736960356,1737494131,'Migrated from /etc/pihole/adlists.list',1736960356,116155,1,1);
 CREATE TABLE domainlist_by_group
 (
     domainlist_id INTEGER NOT NULL REFERENCES domainlist (id),
