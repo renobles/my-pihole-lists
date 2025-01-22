@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS "group"
     date_modified INTEGER NOT NULL DEFAULT (cast(strftime('%s', 'now') as int)),
     description TEXT
 );
-INSERT INTO "group" VALUES(0,1,'Default',1736960356,1736960356,'The default group');
-INSERT INTO "group" VALUES(1,1,'Adblock',1737494093,1737494093,NULL);
+INSERT INTO "group" VALUES(0,0,'Default',1736960356,1737564448,'The default group');
+INSERT INTO "group" VALUES(1,0,'Adblock',1737494093,1737564450,NULL);
 INSERT INTO "group" VALUES(2,1,'No-block',1737494098,1737494098,NULL);
 CREATE TABLE domainlist
 (
