@@ -9,3 +9,5 @@
 192.168.86.24 wazuh.nobleshome.com
 192.168.86.254 opnsense.nobleshome.com
 192.168.86.10 request.nobleshome.com
+192.168.86.10 emby.nobleshome.com
+192.168.86.10 jellyfin.nobleshome.com
