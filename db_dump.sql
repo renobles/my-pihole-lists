@@ -30,7 +30,7 @@ CREATE TABLE domainlist
 CREATE TABLE adlist
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    address TEXT UNIQUE NOT NULL,
+    address TEXT NOT NULL,
     enabled BOOLEAN NOT NULL DEFAULT 1,
     date_added INTEGER NOT NULL DEFAULT (cast(strftime('%s', 'now') as int)),
     date_modified INTEGER NOT NULL DEFAULT (cast(strftime('%s', 'now') as int)),
@@ -38,9 +38,12 @@ CREATE TABLE adlist
     date_updated INTEGER,
     number INTEGER NOT NULL DEFAULT 0,
     invalid_domains INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 0
+    status INTEGER NOT NULL DEFAULT 0,
+    abp_entries INTEGER NOT NULL DEFAULT 0,
+    type INTEGER NOT NULL DEFAULT 0,
+    UNIQUE(address, type)
 );
-INSERT INTO adlist VALUES(1,'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',0,1736960356,1737494131,'Migrated from /etc/pihole/adlists.list',1736960356,116155,1,1);
+INSERT INTO adlist VALUES(1,'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',0,1736960356,1737494131,'Migrated from /etc/pihole/adlists.list',1736960356,116155,1,1,0,0);
 CREATE TABLE domainlist_by_group
 (
     domainlist_id INTEGER NOT NULL REFERENCES domainlist (id),
